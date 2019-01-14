@@ -10,7 +10,7 @@ Allows you to define the routes for your Next.js website, to decouple them from 
 2. The facility for "masking" routes to bypass the pages convention is functional, but is lacking in the necessary abstractions to make it ergonomic.
 3. Existing solutions such as `next-routes` partially solve the problem, but use a chainable API that can be hard to compose and enable more advanced functionality.
 
-### Installation
+### Installation
 
 ```
 npm install next-route-resolver
@@ -26,7 +26,7 @@ yarn add next-route-resolver
 
 #### Define some routes
 
-```javascript
+```
 import { compileRoutes } from "next-route-resolver";
 
 const routes = compileRoutes([
@@ -48,7 +48,7 @@ const routes = compileRoutes([
 ]);
 ```
 
-### Resolving URLs to a page and query
+#### Resolving URLs to a page and query
 
 The returned object from the `resolve` function can be used to tell Next.js what page to render. You'll most likely use this as part of a request handler in your server code.
 
