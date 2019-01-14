@@ -10,6 +10,11 @@ Allows you to define the routes for your Next.js website, to decouple them from 
 2. The facility for "masking" routes to bypass the pages convention is functional, but is lacking in the necessary abstractions to make it ergonomic.
 3. Existing solutions such as `next-routes` partially solve the problem, but use a chainable API that can be hard to compose and enable more advanced functionality.
 
+### Drawbacks
+
+1. Requires defining your own server (eg using Express.js) rather using the scripts Next.js gives you out of the box.
+2. Centralised routing needs to be in the core bundle, which could present a filesize issue for larger websites.
+
 ### Installation
 
 ```
