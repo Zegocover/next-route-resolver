@@ -26,7 +26,7 @@ yarn add next-route-resolver
 
 #### Define some routes
 
-```
+```javascript
 import { compileRoutes } from "next-route-resolver";
 
 const routes = compileRoutes([
