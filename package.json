@@ -9,6 +9,7 @@
   "scripts": {
     "lint": "eslint *.js src",
     "build": "del dist/* && babel src -d dist",
+    "prepublishOnly": "yarn lint && yarn test && yarn build",
     "test": "jest src"
   },
   "repository": {
