@@ -1,7 +1,7 @@
 {
   "name": "next-route-resolver",
   "description": "Declarative route definition for Next.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist",
   "files": [
     "dist"
