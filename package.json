@@ -1,7 +1,7 @@
 {
   "name": "next-route-resolver",
   "description": "Declarative route definition for Next.js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist",
   "files": [
     "dist"
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/Zegocover/next-route-resolver#readme",
   "dependencies": {
     "lodash": "^4.17.11",
-    "lodash-es": "^4.17.11",
     "path-to-regexp": "^3.0.0",
     "url-join": "^4.0.0"
   },
