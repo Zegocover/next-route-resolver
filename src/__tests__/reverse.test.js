@@ -110,4 +110,22 @@ describe("reverse", () => {
       },
     });
   });
+
+  it("should include unused params in visible query string", () => {
+    const routes = compileRoutes([
+      {
+        path: "/foo/",
+        name: "foo",
+        page: "Foo",
+      },
+    ]);
+
+    expect(reverse(routes, "foo", { x: "y" })).toEqual({
+      as: "/foo/?x=y",
+      href: {
+        pathname: "/Foo",
+        query: { x: "y" },
+      },
+    });
+  });
 });

@@ -37,8 +37,21 @@ export default function reverse(routes, name, params = {}) {
 
   const route = candidateRoutes[0];
 
+  let path = route.toPath(params);
+
+  const anonymousParams = Object.keys(params).reduce((acc, key) => {
+    if (!route.allKeyNames.includes(key)) {
+      acc[key] = params[key];
+    }
+    return acc;
+  }, {});
+
+  if (Object.keys(anonymousParams).length > 0) {
+    path = `${path}?${new URLSearchParams(anonymousParams).toString()}`;
+  }
+
   return {
-    as: route.toPath(params),
+    as: path,
     href: {
       pathname: normalizePage(route.page),
       query: { ...route.params, ...params },
