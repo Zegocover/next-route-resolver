@@ -5,7 +5,7 @@ workflow "Run CI on push" {
 
 action "Install dependencies" {
   uses = "nuxt/actions-yarn@node-11"
-  runs = "install"
+  args = "install"
 }
 
 action "Test" {
@@ -17,5 +17,5 @@ action "Test" {
 action "Lint" {
   uses = "nuxt/actions-yarn@node-11"
   needs = ["Install dependencies"]
-  runs = "lint"
+  args = "lint"
 }
