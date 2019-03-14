@@ -1,6 +1,6 @@
 workflow "Run CI on push" {
   on = "push"
-  resolves = ["Lint", "Tests"]
+  resolves = ["Lint", "Test"]
 }
 
 action "Install dependencies" {
