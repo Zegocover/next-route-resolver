@@ -8,14 +8,20 @@ action "If Docs Changed" {
   args = "docs"
 }
 
+action "If Source Changed" {
+  uses = "./actions/directory-filter"
+  args = "src"
+}
+
 action "Install dependencies" {
   uses = "nuxt/actions-yarn@node-10"
+  needs = ["If Source Changed"]
   args = "install"
 }
 
 action "Test" {
-  needs = "Install dependencies"
   uses = "nuxt/actions-yarn@node-10"
+  needs = ["Install dependencies"]
   args = "test"
 }
 
