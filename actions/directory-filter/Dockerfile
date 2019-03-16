@@ -5,5 +5,11 @@ LABEL "com.github.actions.description"="Filter based on changes against the base
 LABEL "com.github.actions.icon"="filter"
 LABEL "com.github.actions.color"="gray-dark"
 
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y \
+        jq && \
+	apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
+
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
