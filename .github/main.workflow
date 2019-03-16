@@ -9,12 +9,12 @@ workflow "Build documentation on docs changes" {
 }
 
 action "If Docs Changed" {
-  uses = "AndrewIngram/actions-changed-directory-filter@master"
+  uses = "AndrewIngram/actions-changed-directory-filter@1b839009e80e1a62b7ab7ac6dd3546f78d9d39b2"
   args = "docs"
 }
 
 action "If Source Changed" {
-  uses = "AndrewIngram/actions-changed-directory-filter@master"
+  uses = "AndrewIngram/actions-changed-directory-filter@1b839009e80e1a62b7ab7ac6dd3546f78d9d39b2"
   args = "src"
 }
 
