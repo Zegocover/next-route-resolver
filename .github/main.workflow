@@ -1,6 +1,11 @@
 workflow "Run CI on push" {
   on = "push"
-  resolves = ["Lint", "Test"]
+  resolves = ["Lint", "Test", "Build Docs"]
+}
+
+action "If Docs Changed" {
+  uses = "./actions/directory-filter"
+  args = "docs"
 }
 
 action "Install dependencies" {
@@ -18,4 +23,10 @@ action "Lint" {
   uses = "nuxt/actions-yarn@master"
   needs = ["Install dependencies"]
   args = "lint"
+}
+
+action "Build Docs" {
+  uses = "nuxt/actions-yarn@master"
+  needs = ["If Docs Changed"]
+  args = "docs"
 }
