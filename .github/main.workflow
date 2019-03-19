@@ -37,6 +37,6 @@ action "Test" {
 }
 
 action "Lint" {
-  uses = "hallee/eslint-action@master"
+  uses = "gimenete/eslint-action@master"
   secrets = ["GITHUB_TOKEN"]
 }
