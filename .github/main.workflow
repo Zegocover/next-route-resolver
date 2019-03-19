@@ -27,7 +27,7 @@ action "If Source Changed" {
 action "Install dependencies" {
   uses = "nuxt/actions-yarn@node-10"
   needs = ["If Source Changed"]
-  args = "install"
+  args = "install --frozen-lockfile"
 }
 
 action "Test" {
