@@ -38,5 +38,6 @@ action "Test" {
 
 action "Lint" {
   uses = "gimenete/eslint-action@master"
+  needs = ["Install dependencies"]
   secrets = ["GITHUB_TOKEN"]
 }
