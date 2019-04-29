@@ -13,7 +13,7 @@ export default function getRequestHandlerForRoutes(
     const params = resolve(routes, req.url);
 
     if (!params) {
-      nextHandler(req, res, parse(req.url));
+      nextHandler(req, res, parse(req.url, true));
       return;
     }
 
@@ -26,7 +26,7 @@ export default function getRequestHandlerForRoutes(
         app.render(req, res, page, query);
       }
     } else {
-      nextHandler(req, res, parse(req.url));
+      nextHandler(req, res, parse(req.url, true));
     }
   };
 }
